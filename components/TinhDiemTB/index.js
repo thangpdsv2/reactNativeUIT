@@ -20,7 +20,7 @@ export default function TinhDiemTB() {
                         placeholder="Điểm HK 1"
                         keyboardType="numeric"
                         onChangeText={(value) => {
-                            if (value < 10 && value >= 0) {
+                            if (value <= 10 && value >= 0) {
                                 setDiemHK1(value)
                                 
                             } else {
@@ -38,7 +38,7 @@ export default function TinhDiemTB() {
                         placeholder="Điểm HK 2"
                         keyboardType="numeric"
                         onChangeText={(value) => {
-                            if (value < 10 && value >= 0) {
+                            if (value <= 10 && value >= 0) {
                                 setDiemHK2(value)
                                 
                             } else {
