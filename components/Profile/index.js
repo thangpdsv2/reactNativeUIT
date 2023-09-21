@@ -23,6 +23,8 @@ export default function Profile({route, navigation}) {
                         keyboardType="default"
                         onChangeText={(value) => setHoTen(value)}
                         value={hoTen}
+                        editable={false} selectTextOnFocus={false}
+
                     />
                     </View>
                 <View style={{ flexDirection: 'row' }}>
@@ -34,6 +36,8 @@ export default function Profile({route, navigation}) {
                         keyboardType="default"
                         onChangeText={(value) => setMatKhau(value)}
                         value={matKhau}
+                        editable={false} selectTextOnFocus={false}
+
                     />
                 </View>
 
@@ -42,3 +46,19 @@ export default function Profile({route, navigation}) {
     )
 }
 
+
+const styles = StyleSheet.create({
+    headerText: {
+        fontSize: 30,
+        fontWeight: 'bold',
+        marginBottom: 20,
+    },
+    input: {
+        height: 40,
+        margin: 12,
+        borderWidth: 1,
+        width: 200,
+        borderRadius: 10,
+        alignSelf: 'center',
+    },
+})
