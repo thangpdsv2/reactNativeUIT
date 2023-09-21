@@ -10,7 +10,8 @@ import { useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './components/HomeScreen';
-import Profile from './components/Profile';
+import TinhDiemTB from './components/TinhDiemTB';
+import Login from './components/Login';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,13 +21,14 @@ function App(): JSX.Element {
   return (
     <NavigationContainer>
       {
-        <Stack.Navigator initialRouteName='Profile'>
+        <Stack.Navigator initialRouteName='Login'>
             <Stack.Screen
               name="Home"
               component={HomeScreen}
               options={{ title: 'Welcome' }}
             />
-          <Stack.Screen name="Profile" component={Profile} />
+          <Stack.Screen name="TinhDiemTB" component={TinhDiemTB} />
+          <Stack.Screen name="Login" component={Login} />
 
         </Stack.Navigator>
       }

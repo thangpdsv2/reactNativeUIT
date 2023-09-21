@@ -1,15 +1,44 @@
 import React from 'react'
-import { View, Text , Button} from 'react-native'
+
+import { View, Text, StyleSheet, TextInput, Button } from 'react-native'
+import { useState, useContext } from 'react'
 
 
-const Profile = ({navigation}) =>{
+
+export default function Profile({route, navigation}) {
+    const {tk, mk} = route.params
+    const [hoTen, setHoTen] = useState(tk)
+    const [matKhau, setMatKhau] = useState(mk)
+    
     return (
-        <View style={{alignItems:'center', justifyContent:'center', flex:1}}>
-            <Text>Profile</Text>
-            <Button title="Go to Home" onPress={() => navigation.navigate('Home')} />
-        </View>
+        <>
+            <View style={{ alignItems: 'center', justifyContent: 'top', flex: 1 }}>
+                <Text style={styles.headerText}>Thông tin cá nhân</Text>
+                <View style={{ flexDirection: 'row' }}>
+                    <Text style={{ fontSize: 20, alignSelf: 'center' }} >Họ và tên:</Text>
+                    <TextInput
+
+                        style={styles.input}
+                        placeholder="Họ và tên"
+                        keyboardType="default"
+                        onChangeText={(value) => setHoTen(value)}
+                        value={hoTen}
+                    />
+                    </View>
+                <View style={{ flexDirection: 'row' }}>
+                    <Text style={{ fontSize: 20, alignSelf: 'center' }} >Mật Khẩu:</Text>
+                    <TextInput
+
+                        style={styles.input}
+                        placeholder="Mật Khẩu"
+                        keyboardType="default"
+                        onChangeText={(value) => setMatKhau(value)}
+                        value={matKhau}
+                    />
+                </View>
+
+            </View>
+        </>
     )
 }
-
-export default Profile
 

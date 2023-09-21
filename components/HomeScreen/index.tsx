@@ -1,8 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import type { PropsWithChildren } from 'react';
 import { ThemeContext } from '../../Context'
-import ButtonTest from '../Button'
 import {
   Text,
   useColorScheme,
@@ -16,7 +14,7 @@ import {
 // import { createNativeStackNavigator } from '@react-navigation/native-stack';
 // import { NavigationContainer } from '@react-navigation/native';
 
-const HomeScreen = ({ navigation }) => {
+const HomeScreen = ({ navigation  }) => {
   const [theme, setTheme] = useState('light')
 
   const isDarkMode = useColorScheme() === 'dark';
@@ -26,13 +24,15 @@ const HomeScreen = ({ navigation }) => {
   };
   return (
     <ThemeContext.Provider value={theme}>
-
+      
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text>Home Test test</Text>
         <Text>{theme}</Text>
+        <Text> {typeof(navigation)} </Text>
       </View>
-      <Button title="Go to Profile" onPress={() => navigation.navigate('Profile')} />
-    <ButtonTest></ButtonTest>
+      <Button title="Go to TinhDiemTB" onPress={() => navigation.navigate('TinhDiemTB')} />
+      <Button title="Go to Login" onPress={() => navigation.navigate('Login')} />
+    {/* <ButtonTest></ButtonTest> */}
     </ThemeContext.Provider>
 
   )
