@@ -15,6 +15,7 @@ import Login from './components/Login';
 import Profile from './components/Profile';
 import FlatList from './components/FlatList';
 import SectionList from './components/SectionList';
+import Modal from './components/Modal';
 
 const Stack = createNativeStackNavigator();
 
@@ -35,6 +36,7 @@ function App(): JSX.Element {
           <Stack.Screen name="Profile" component={Profile} />
           <Stack.Screen name="FlatList" component={FlatList} />
           <Stack.Screen name="SectionList" component={SectionList} />
+          <Stack.Screen name="Modal" component={Modal} />
 
         </Stack.Navigator>
       }
