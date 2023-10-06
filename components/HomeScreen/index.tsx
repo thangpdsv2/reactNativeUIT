@@ -3,25 +3,17 @@ import { useState } from 'react'
 import { ThemeContext } from '../../Context'
 import {
   Text,
-  useColorScheme,
   View,
   Button
 } from 'react-native';
-import {
-  Colors,
-} from 'react-native/Libraries/NewAppScreen';
+import { StackNavigationState } from '@react-navigation/native';
 
 // import { createNativeStackNavigator } from '@react-navigation/native-stack';
 // import { NavigationContainer } from '@react-navigation/native';
+// type HomeScreenProps = StackNavigationState
 
-const HomeScreen = ({ navigation  }) => {
+const HomeScreen = ({ navigation }:any ) => {
   const [theme, setTheme] = useState('light')
-
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
   return (
     <ThemeContext.Provider value={theme}>
       
@@ -32,7 +24,7 @@ const HomeScreen = ({ navigation  }) => {
       </View>
       <Button title="Go to TinhDiemTB" onPress={() => navigation.navigate('TinhDiemTB')} />
       <Button title="Go to Login" onPress={() => navigation.navigate('Login')} />
-    {/* <ButtonTest></ButtonTest> */}
+      <Button title="FlatList" onPress={() => navigation.navigate('FlatList')} />
     </ThemeContext.Provider>
 
   )

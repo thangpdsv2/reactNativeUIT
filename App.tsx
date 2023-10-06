@@ -13,6 +13,7 @@ import HomeScreen from './components/HomeScreen';
 import TinhDiemTB from './components/TinhDiemTB';
 import Login from './components/Login';
 import Profile from './components/Profile';
+import FlatList from './components/FlatList';
 
 const Stack = createNativeStackNavigator();
 
@@ -31,6 +32,7 @@ function App(): JSX.Element {
           <Stack.Screen name="TinhDiemTB" component={TinhDiemTB} />
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Profile" component={Profile} />
+          <Stack.Screen name="FlatList" component={FlatList} />
 
         </Stack.Navigator>
       }
