@@ -25,6 +25,7 @@ const HomeScreen = ({ navigation }:any ) => {
       <Button title="Go to TinhDiemTB" onPress={() => navigation.navigate('TinhDiemTB')} />
       <Button title="Go to Login" onPress={() => navigation.navigate('Login')} />
       <Button title="FlatList" onPress={() => navigation.navigate('FlatList')} />
+      <Button title="SectionList" onPress={() => navigation.navigate('SectionList')} />
     </ThemeContext.Provider>
 
   )
