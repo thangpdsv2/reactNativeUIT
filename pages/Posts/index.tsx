@@ -1,8 +1,9 @@
 import { gql, useQuery } from '@apollo/client';
 
-import React from 'react';
+import * as React from 'react';
 import { Text, View, StyleSheet, FlatList } from 'react-native';
 import Loader from '../../components/Loader';
+import Icon from 'react-native-vector-icons/FontAwesome';
 const QUERY = gql`
 {
     pageLandingCollection {
@@ -29,6 +30,12 @@ const Posts = () =>{
     return (
         <View>
             <Text>{JSON.stringify(data)}</Text>
+            <Icon.Button
+          name="facebook"
+          backgroundColor="#3b5998"
+          onPress={() => alert('Login with Facebook')}>
+          Login with Facebook
+        </Icon.Button>
         </View>
         )
 }
