@@ -25,6 +25,8 @@ import Loader from './components/Loader'
 
 
 const Stack = createNativeStackNavigator();
+
+
 const cache = new InMemoryCache();
 const client = new ApolloClient({
   uri: 'https://graphql.contentful.com/content/v1/spaces/zgbs11bm62wq',
@@ -52,11 +54,11 @@ function App(): JSX.Element {
       <NavigationContainer>
         {
           <Stack.Navigator initialRouteName='Home'>
-              <Stack.Screen
-                name="Home"
-                component={HomeScreen}
-                options={{ title: 'Welcome' }}
-              />
+            <Stack.Screen
+              name="Home"
+              component={HomeScreen}
+              options={{ title: 'Welcome' }}
+            />
             <Stack.Screen name="TinhDiemTB" component={TinhDiemTB} />
             <Stack.Screen name="Login" component={Login} />
             <Stack.Screen name="Profile" component={Profile} />

@@ -1,11 +1,11 @@
-import React from 'react'
+import * as React from 'react'
 
 import { View, Text, StyleSheet, TextInput, Button } from 'react-native'
 import { useState, useContext } from 'react'
 
 
 
-export default function Profile({route, navigation}) {
+export default function Profile({route, navigation}:any) {
     const {tk, mk} = route.params
     const [hoTen, setHoTen] = useState(tk)
     const [matKhau, setMatKhau] = useState(mk)

@@ -1,11 +1,11 @@
-import React from 'react'
+import * as React from 'react'
 
 import { View, Text, StyleSheet, TextInput, Button } from 'react-native'
 import { useState } from 'react'
 
 
 
-export default function Login({ navigation}) {
+export default function Login({ navigation}:any) {
     const [taiKhoan, setTaiKhoan] = useState('')
     const [matKhau, setMatKhau] = useState('')
     return (
