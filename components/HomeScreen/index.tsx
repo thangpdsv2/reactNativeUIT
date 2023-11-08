@@ -18,12 +18,12 @@ const HomeScreen = ({ navigation }:any ) => {
         <Text>{theme}</Text>
         <Text> {typeof(navigation)} </Text>
       </View>
-      <Button title="Go to TinhDiemTB" onPress={() => navigation.navigate('TinhDiemTB')} />
-      <Button title="Go to Login" onPress={() => navigation.navigate('Login')} />
-      <Button title="FlatList" onPress={() => navigation.navigate('FlatList')} />
-      <Button title="SectionList" onPress={() => navigation.navigate('SectionList')} />
-      <Button title="Modal" onPress={() => navigation.navigate('Modal')} />
-      <Button title="Posts" onPress={() => navigation.navigate('Posts')} />
+      {/* <Button title="Go to TinhDiemTB" onPress={() => navigation.navigate('TinhDiemTB')} /> */}
+      {/* <Button title="Go to Login" onPress={() => navigation.navigate('Login')} /> */}
+      {/* <Button title="FlatList" onPress={() => navigation.navigate('FlatList')} /> */}
+      {/* <Button title="SectionList" onPress={() => navigation.navigate('SectionList')} /> */}
+      {/* <Button title="Modal" onPress={() => navigation.navigate('Modal')} /> */}
+      <Button title="Products" onPress={() => navigation.navigate('Products')} />
     </ThemeContext.Provider>
 
   )

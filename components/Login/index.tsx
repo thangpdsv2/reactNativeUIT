@@ -2,12 +2,17 @@ import * as React from 'react'
 
 import { View, Text, StyleSheet, TextInput, Button } from 'react-native'
 import { useState } from 'react'
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 
 
 export default function Login({ navigation}:any) {
     const [taiKhoan, setTaiKhoan] = useState('')
     const [matKhau, setMatKhau] = useState('')
+    function alert(arg0: string) {
+        throw new Error('Function not implemented.');
+    }
+
     return (
         <>
             <View style={{ alignItems: 'center', justifyContent: 'top', flex: 1 }}>
@@ -50,6 +55,12 @@ export default function Login({ navigation}:any) {
                         }
                     }}
                 />
+                <Icon.Button
+                name="facebook"
+                backgroundColor="#3b5998"
+                onPress={() => alert('Login with Facebook')}>
+                Login with Facebook
+                </Icon.Button>
             </View>
         </>
     )

@@ -18,7 +18,8 @@ import Profile from './components/Profile';
 import FlatList from './components/FlatList';
 import SectionList from './components/SectionList';
 import Modal from './components/Modal';
-import Posts from './pages/Posts'
+import Products from './pages/Products'
+import Flowers from './pages/Flowers'
 import { persistCache } from 'apollo3-cache-persist';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Loader from './components/Loader'
@@ -59,13 +60,14 @@ function App(): JSX.Element {
               component={HomeScreen}
               options={{ title: 'Welcome' }}
             />
-            <Stack.Screen name="TinhDiemTB" component={TinhDiemTB} />
+            {/* <Stack.Screen name="TinhDiemTB" component={TinhDiemTB} />
             <Stack.Screen name="Login" component={Login} />
             <Stack.Screen name="Profile" component={Profile} />
             <Stack.Screen name="FlatList" component={FlatList} />
             <Stack.Screen name="SectionList" component={SectionList} />
-            <Stack.Screen name="Modal" component={Modal} />
-            <Stack.Screen name="Posts" component={Posts} />
+            <Stack.Screen name="Modal" component={Modal} /> */}
+            <Stack.Screen name="Products" component={Products} />
+            <Stack.Screen name="Flowers" component={Flowers} />
           </Stack.Navigator>
         }
       </NavigationContainer>
