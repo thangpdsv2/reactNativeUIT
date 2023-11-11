@@ -20,26 +20,28 @@ const Item = ({ title, url, price }: ItemProps) => (
 
     </View>
 );
-const QUERY = gql`
-{
-  productsCollection (limit: 10){
-    items{
-      sys {
-        id
-      }
-      title
-    }
-  }
-}
-`;
+
 const Flowers = ({ route, navigation }) => {
-    // const {data,loading} = useQuery(QUERY)
     // console.log(route.params.page.flowersCollection.items)
     const {page:{
         sys:pageID
     }}=route.params
     console.log('id',pageID)
     console.log('id page',pageID.id)
+    const QUERY = gql`
+                {
+                    productsCollection (limit: 10){
+                        items{
+                        sys {
+                            id
+                        }
+                        title
+                        }
+                    }
+                }
+                `;
+    const {data,loading} = useQuery(QUERY)
+
     return (
         <View>
             <Text>{JSON.stringify(route)}</Text>

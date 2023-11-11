@@ -40,7 +40,7 @@ const Products = ({ navigation }:any) =>{
     const {data,loading} = useQuery(QUERY)
     // console.log('data',data?.productsCollection.items)
     // console.log(typeof data?.productsCollection.items)
-    let listButton=data?.productsCollection.items.map((page,index)=>{
+    let listButton=data?.productsCollection.items.map((page,index:number)=>{
       console.log("page.title'",page.title)
       console.log("page.sys.id",page.sys.id)
       return (<Button id={page?.sys.id} title={page.title} onPress={() => navigation.navigate('Flowers',{
