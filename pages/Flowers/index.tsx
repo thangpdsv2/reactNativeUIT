@@ -3,6 +3,17 @@ import { useState } from 'react'
 import { Text, Image, View, StyleSheet, FlatList } from 'react-native';
 import Loader from '../../components/Loader';
 import { gql, useQuery } from '@apollo/client';
+import type { NativeStackScreenProps } from '@react-navigation/native-stack';
+
+type RootStackParamList = {
+    Profile: {
+        page: {
+            sys: string
+        }
+    }
+};
+
+type Props = NativeStackScreenProps<RootStackParamList, 'Profile'>;
 
 type ItemProps = { title: string, url: string, price: number };
 const Item = ({ title, url, price }: ItemProps) => (
@@ -21,13 +32,13 @@ const Item = ({ title, url, price }: ItemProps) => (
     </View>
 );
 
-const Flowers = ({ route, navigation }) => {
+const Flowers = ({ route, navigation }: Props) => {
     // console.log(route.params.page.flowersCollection.items)
-    const {page:{
-        sys:pageID
-    }}=route.params
-    console.log('id',pageID)
-    console.log('id page',pageID.id)
+    const {
+        page: {
+            sys: pageID
+        } 
+    } = route.params
     const QUERY = gql`
                 {
                     productsCollection (limit: 10){
@@ -40,7 +51,7 @@ const Flowers = ({ route, navigation }) => {
                     }
                 }
                 `;
-    const {data,loading} = useQuery(QUERY)
+    const { data, loading } = useQuery(QUERY)
 
     return (
         <View>
